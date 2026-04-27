@@ -1,7 +1,8 @@
 import { Head } from '@inertiajs/react'
+import type { PageProps } from '../pages.gen'
 import Layout from './Layout'
 
-export default function About({ title }: { title: string }) {
+export default function About({ title }: PageProps<'About'>) {
   return (
     <Layout>
       <Head title="About" />

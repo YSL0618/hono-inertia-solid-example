@@ -1,9 +1,8 @@
 import { Head, Link } from '@inertiajs/react'
+import type { PageProps } from '../../pages.gen'
 import Layout from '../Layout'
 
-type Post = { id: number; title: string; body: string }
-
-export default function Show({ post }: { post: Post }) {
+export default function Show({ post }: PageProps<'Posts/Show'>) {
   return (
     <Layout>
       <Head title={post.title} />
