@@ -1,11 +1,12 @@
 import { renderToString } from 'react-dom/server'
-import { Script, ViteClient } from 'vite-ssr-components/react'
+import { Link, Script, ViteClient } from 'vite-ssr-components/react'
 import { serializePage, type PageObject, type RootView } from '@hono/inertia'
 
 const Document = ({ page }: { page: PageObject }) => (
   <html>
     <head>
       <ViteClient />
+      <Link rel="stylesheet" href="/app/styles.css" />
       <Script src="/app/client.tsx" />
     </head>
     <body>
