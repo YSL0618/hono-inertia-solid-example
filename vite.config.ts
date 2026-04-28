@@ -1,8 +1,9 @@
+// vite.config.ts
 import { cloudflare } from '@cloudflare/vite-plugin'
 import { defineConfig } from 'vite'
 import ssrPlugin from 'vite-ssr-components/plugin'
-import { inertiaPagesPlugin } from './src/vite-plugin'
+import { inertiaPages } from '@hono/inertia/vite'
 
 export default defineConfig({
-  plugins: [inertiaPagesPlugin(), cloudflare(), ssrPlugin()]
+  plugins: [inertiaPages(), cloudflare(), ssrPlugin()]
 })
