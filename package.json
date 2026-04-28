@@ -9,7 +9,7 @@
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
-    "@hono/inertia": "^0.1.0",
+    "@hono/inertia": "^0.2.0",
     "@hono/react-renderer": "^1.0.1",
     "@hono/zod-validator": "^0.7.6",
     "@inertiajs/react": "^3.0.3",
