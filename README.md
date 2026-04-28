@@ -1,21 +1,24 @@
-```txt
-npm install
-npm run dev
+# hono-inertia-example
+
+[Hono](https://hono.dev) + [Inertia.js](https://inertiajs.com) (React) on Cloudflare Workers.
+
+## Pages
+
+- `/` — Home
+- `/users` — Users list
+- `/users/:id` — User detail
+- `/users/new` — Create user (with `@hono/zod-validator`)
+
+## Develop
+
+```sh
+bun install
+bun run dev
 ```
 
-```txt
-npm run deploy
-```
+## Build & deploy
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
-
-```txt
-npm run cf-typegen
-```
-
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
+```sh
+bun run build
+bun run deploy
 ```
