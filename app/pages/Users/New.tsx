@@ -1,3 +1,4 @@
+import { Title } from "@solidjs/meta";
 import { Link, useForm } from "inertia-adapter-solid";
 import type { PageProps } from "../../pages.gen";
 import Layout from "../Layout";
@@ -13,6 +14,7 @@ export default function UsersNew({ values, errors }: PageProps<"Users/New">) {
 
 	return (
 		<Layout>
+			<Title>New user</Title>
 			<p>
 				<Link href="/users">← Back to users</Link>
 			</p>
