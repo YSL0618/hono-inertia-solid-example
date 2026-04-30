@@ -4,8 +4,8 @@
 
 ## Overview / 概要
 
-- EN: This project has been migrated from React to SolidJS.
-- JP: このプロジェクトは React から SolidJS へ移行しました。
+- EN: This project has been migrated from Hono + Inertia.js + React to SolidJS as the frontend framework.
+- JP: このプロジェクトは Hono + Inertia.js + React のフロントエンドフレームワークを SolidJS に移行しました。
 
 - EN: It uses [`inertia-adapter-solid`](https://github.com/iksaku/inertia-adapter-solid) as the Inertia adapter for SolidJS.
 - JP: SolidJS 向けの Inertia アダプターとして [`inertia-adapter-solid`](https://github.com/iksaku/inertia-adapter-solid) を利用しています。
