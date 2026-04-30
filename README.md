@@ -1,6 +1,25 @@
 # hono-inertia-example
 
-[Hono](https://hono.dev) + [Inertia.js](https://inertiajs.com) (React) on Cloudflare Workers.
+[Hono](https://hono.dev) + [Inertia.js](https://inertiajs.com) + SolidJS on Cloudflare Workers.
+
+## Overview / 概要
+
+- EN: This project has been migrated from React to SolidJS.
+- JP: このプロジェクトは React から SolidJS へ移行しました。
+
+- EN: It uses [`inertia-adapter-solid`](https://github.com/iksaku/inertia-adapter-solid) as the Inertia adapter for SolidJS.
+- JP: SolidJS 向けの Inertia アダプターとして [`inertia-adapter-solid`](https://github.com/iksaku/inertia-adapter-solid) を利用しています。
+
+- EN: Server-Side Rendering (SSR) is supported.
+- JP: Server-Side Rendering (SSR) に対応しています。
+
+## Experimental Status / 実験的ステータス
+
+- EN: Hono + Inertia.js integration is experimental.
+- JP: Hono + Inertia.js の連携は実験的 (Experimental) です。
+
+- EN: `inertia-adapter-solid` is also experimental/beta.
+- JP: `inertia-adapter-solid` も実験的 / ベータ版です。
 
 ## Pages
 
