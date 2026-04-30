@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "lib": ["ESNext", "DOM"],
     "types": ["vite/client"],
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   }
 }

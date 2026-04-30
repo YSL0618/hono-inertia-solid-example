@@ -1,18 +1,12 @@
-import { renderToString } from 'react-dom/server'
-import { Link, Script, ViteClient } from 'vite-ssr-components/react'
 import type { RootView } from '@hono/inertia'
 import { renderPage } from './ssr'
 
-const Head = () => (
-  <>
-    <ViteClient />
-    <Link rel="stylesheet" href="/app/styles.css" />
-    <Script src="/app/client.tsx" />
-  </>
-)
-
 export const rootView: RootView = async (page) => {
   const { head, body } = await renderPage(page)
-  const headHtml = renderToString(<Head />) + head.join('')
+  const headHtml =
+    '<script type="module" src="/@vite/client"></script>' +
+    '<link rel="stylesheet" href="/app/styles.css">' +
+    '<script type="module" src="/app/client.tsx"></script>' +
+    head.join('')
   return `<!DOCTYPE html><html><head>${headHtml}</head><body>${body}</body></html>`
 }

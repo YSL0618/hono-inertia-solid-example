@@ -1,21 +1,23 @@
-import { Head, Link } from '@inertiajs/react'
+import { Link } from 'inertia-adapter-solid'
+import { For } from 'solid-js'
 import type { PageProps } from '../../pages.gen'
 import Layout from '../Layout'
 
 export default function UsersIndex({ users }: PageProps<'Users/Index'>) {
   return (
     <Layout>
-      <Head title="Users" />
       <h1>Users</h1>
       <p>
         <Link href="/users/new">+ New user</Link>
       </p>
       <ul>
-        {users.map((user) => (
-          <li key={user.id}>
+        <For each={users}>
+          {(user) => (
+            <li>
             <Link href={`/users/${user.id}`}>{user.name}</Link> &lt;{user.email}&gt;
-          </li>
-        ))}
+            </li>
+          )}
+        </For>
       </ul>
     </Layout>
   )

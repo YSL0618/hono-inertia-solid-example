@@ -1,13 +1,13 @@
-import { createInertiaApp, type ResolvedComponent } from '@inertiajs/react'
-import { hydrateRoot } from 'react-dom/client'
+import { createInertiaApp } from 'inertia-adapter-solid'
+import { hydrate } from 'solid-js/web'
 
 createInertiaApp({
   resolve: async (name) => {
-    const pages = import.meta.glob<{ default: ResolvedComponent }>('./pages/**/*.tsx')
+    const pages = import.meta.glob<{ default: unknown }>('./pages/**/*.tsx')
     const page = await pages[`./pages/${name}.tsx`]()
-    return page.default
+    return page?.default
   },
   setup({ el, App, props }) {
-    hydrateRoot(el, <App {...props} />)
+    hydrate(() => <App {...props} />, el)
   }
 })
