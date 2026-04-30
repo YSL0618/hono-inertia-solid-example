@@ -1,5 +1,5 @@
 import { createInertiaApp, type ResolvedComponent } from '@inertiajs/react'
-import { createRoot } from 'react-dom/client'
+import { hydrateRoot } from 'react-dom/client'
 
 createInertiaApp({
   resolve: async (name) => {
@@ -8,6 +8,6 @@ createInertiaApp({
     return page.default
   },
   setup({ el, App, props }) {
-    createRoot(el).render(<App {...props} />)
+    hydrateRoot(el, <App {...props} />)
   }
 })

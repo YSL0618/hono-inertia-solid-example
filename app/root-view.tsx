@@ -1,19 +1,18 @@
 import { renderToString } from 'react-dom/server'
 import { Link, Script, ViteClient } from 'vite-ssr-components/react'
-import { serializePage, type PageObject, type RootView } from '@hono/inertia'
+import type { RootView } from '@hono/inertia'
+import { renderPage } from './ssr'
 
-const Document = ({ page }: { page: PageObject }) => (
-  <html>
-    <head>
-      <ViteClient />
-      <Link rel="stylesheet" href="/app/styles.css" />
-      <Script src="/app/client.tsx" />
-    </head>
-    <body>
-      <script data-page="app" type="application/json" dangerouslySetInnerHTML={{ __html: serializePage(page) }} />
-      <div id="app" />
-    </body>
-  </html>
+const Head = () => (
+  <>
+    <ViteClient />
+    <Link rel="stylesheet" href="/app/styles.css" />
+    <Script src="/app/client.tsx" />
+  </>
 )
 
-export const rootView: RootView = (page) => '<!DOCTYPE html>' + renderToString(<Document page={page} />)
+export const rootView: RootView = async (page) => {
+  const { head, body } = await renderPage(page)
+  const headHtml = renderToString(<Head />) + head.join('')
+  return `<!DOCTYPE html><html><head>${headHtml}</head><body>${body}</body></html>`
+}
