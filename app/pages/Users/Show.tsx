@@ -1,9 +1,9 @@
-import { Title } from "@solidjs/meta";
-import { Link } from "inertia-adapter-solid";
-import type { PageProps } from "../../pages.gen";
-import Layout from "../Layout";
+import { Title } from '@solidjs/meta'
+import { Link } from 'inertia-adapter-solid'
+import type { PageProps } from '../../pages.gen'
+import Layout from '../Layout'
 
-export default function UsersShow({ user }: PageProps<"Users/Show">) {
+export default function UsersShow({ user }: PageProps<'Users/Show'>) {
 	return (
 		<Layout>
 			<Title>{user.name}</Title>
@@ -18,5 +18,5 @@ export default function UsersShow({ user }: PageProps<"Users/Show">) {
 				<dd>{user.bio}</dd>
 			</dl>
 		</Layout>
-	);
+	)
 }

@@ -4,15 +4,15 @@ import type app from './server'
 export type PageName = 'Home' | 'Users/Index' | 'Users/New' | 'Users/Show'
 
 declare module '@hono/inertia' {
-  interface InertiaPages {
-    'Home': unknown
-    'Users/Index': unknown
-    'Users/New': unknown
-    'Users/Show': unknown
-  }
-  interface AppRegistry {
-    app: typeof app
-  }
+	interface InertiaPages {
+		Home: unknown
+		'Users/Index': unknown
+		'Users/New': unknown
+		'Users/Show': unknown
+	}
+	interface AppRegistry {
+		app: typeof app
+	}
 }
 
 export type { PageProps } from '@hono/inertia'

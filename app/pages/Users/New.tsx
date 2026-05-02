@@ -1,16 +1,16 @@
-import { Title } from "@solidjs/meta";
-import { Link, useForm } from "inertia-adapter-solid";
-import type { PageProps } from "../../pages.gen";
-import Layout from "../Layout";
+import { Title } from '@solidjs/meta'
+import { Link, useForm } from 'inertia-adapter-solid'
+import type { PageProps } from '../../pages.gen'
+import Layout from '../Layout'
 
-export default function UsersNew({ values, errors }: PageProps<"Users/New">) {
+export default function UsersNew({ values, errors }: PageProps<'Users/New'>) {
 	const form = useForm({
-		name: values?.name ?? "",
-		email: values?.email ?? "",
-		bio: values?.bio ?? "",
-	});
+		name: values?.name ?? '',
+		email: values?.email ?? '',
+		bio: values?.bio ?? '',
+	})
 
-	const fieldErrors = errors;
+	const fieldErrors = errors
 
 	return (
 		<Layout>
@@ -21,8 +21,8 @@ export default function UsersNew({ values, errors }: PageProps<"Users/New">) {
 			<h1>New user</h1>
 			<form
 				onSubmit={(e) => {
-					e.preventDefault();
-					form.post("/users");
+					e.preventDefault()
+					form.post('/users')
 				}}
 			>
 				<div>
@@ -31,7 +31,7 @@ export default function UsersNew({ values, errors }: PageProps<"Users/New">) {
 						id="name"
 						type="text"
 						value={form.data.name}
-						onInput={(e) => form.setData("name", e.currentTarget.value)}
+						onInput={(e) => form.setData('name', e.currentTarget.value)}
 					/>
 					{fieldErrors.name && <p class="error">{fieldErrors.name}</p>}
 				</div>
@@ -41,7 +41,7 @@ export default function UsersNew({ values, errors }: PageProps<"Users/New">) {
 						id="email"
 						type="email"
 						value={form.data.email}
-						onInput={(e) => form.setData("email", e.currentTarget.value)}
+						onInput={(e) => form.setData('email', e.currentTarget.value)}
 					/>
 					{fieldErrors.email && <p class="error">{fieldErrors.email}</p>}
 				</div>
@@ -50,7 +50,7 @@ export default function UsersNew({ values, errors }: PageProps<"Users/New">) {
 					<textarea
 						id="bio"
 						value={form.data.bio}
-						onInput={(e) => form.setData("bio", e.currentTarget.value)}
+						onInput={(e) => form.setData('bio', e.currentTarget.value)}
 					/>
 					{fieldErrors.bio && <p class="error">{fieldErrors.bio}</p>}
 				</div>
@@ -59,5 +59,5 @@ export default function UsersNew({ values, errors }: PageProps<"Users/New">) {
 				</button>
 			</form>
 		</Layout>
-	);
+	)
 }

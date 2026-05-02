@@ -1,9 +1,9 @@
-import { Link } from "inertia-adapter-solid";
-import type { JSX } from "solid-js";
+import { Link } from 'inertia-adapter-solid'
+import type { JSX } from 'solid-js'
 
 type LayoutProps = {
-	children: JSX.Element;
-};
+	children: JSX.Element
+}
 
 export default function Layout(props: LayoutProps) {
 	return (
@@ -17,5 +17,5 @@ export default function Layout(props: LayoutProps) {
 			</header>
 			<main>{props.children}</main>
 		</div>
-	);
+	)
 }
